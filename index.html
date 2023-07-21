@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try It</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #sipassword {
+            background-color: black;
+            outline: none;
+        }
+        #sipassword:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div class="h-screen flex items-center justify-center content">
+        <form id="passwordForm" class="text-[#00FF19] ">
+            <div class="computer-text">Enter Password 
+              <span id="password-input">[ <input type="password" name="sipassword" id="sipassword" maxlength="10" autofocus> ]</span>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const passwordForm = document.getElementById('passwordForm');
+        const passwordInput = document.getElementById('sipassword');
+        const content_div = document.querySelector('.content');
+
+        const id = "dQw4w9WgXcQ";
+
+        passwordInput.addEventListener('keypress', function(e) {
+
+            passwordForm.remove();
+
+            let iframe = document.createElement('iframe');
+            iframe.setAttribute('src', `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&controls=0&showinfo=0`);
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+            iframe.setAttribute('allowfullscreen', '');
+            iframe.setAttribute('width', '1280');
+            iframe.setAttribute('height', '620');
+
+            iframe.classList.add('modal_vid')
+
+            content_div.appendChild(iframe);
+        })
+    </script>
+</body>
+</html>
